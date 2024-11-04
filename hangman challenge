@@ -1,5 +1,4 @@
 import random
-
 def hangman():
     words = ["python", "programming", "hangman", "developer", "keyboard"]
     word = random.choice(words).upper()
@@ -8,14 +7,12 @@ def hangman():
     guessed_letters = []
     guessed_words = []
     tries = 6
-
     print("Welcome to Hangman!")
     print("Word:", word_completion)
     print("\n")
-
     while not guessed and tries > 0:
         guess = input("Please guess a letter or word: ").upper()
-        
+      
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
@@ -55,5 +52,4 @@ def hangman():
         print("Congrats! You guessed the word:", word, "You win!")
     else:
         print("Sorry, you ran out of tries. The word was:", word, ". Maybe next time!")
-
 hangman()
